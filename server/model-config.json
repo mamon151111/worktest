@@ -1,0 +1,65 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Country": {
+    "dataSource": "mongodb",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "City": {
+    "dataSource": "mongodb",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Auction": {
+    "dataSource": "mongodb",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "AuctionPrices": {
+    "dataSource": "mongodb",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "AuctionImages": {
+    "dataSource": "mongodb",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  }
+}

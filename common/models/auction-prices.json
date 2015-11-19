@@ -1,0 +1,27 @@
+{
+  "name": "AuctionPrices",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "userId": {
+      "type": "number"
+    },
+    "priceTime": {
+      "type": "date"
+    },
+    "auctionId": {
+      "type": "number"
+    },
+    "price": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

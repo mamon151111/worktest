@@ -1,0 +1,48 @@
+{
+  "name": "Auction",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "owner": {
+      "type": "number"
+    },
+    "timeStart": {
+      "type": "date"
+    },
+    "timeEnd": {
+      "type": "date"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "startPrice": {
+      "type": "number"
+    },
+    "lastPrice": {
+      "type": "number"
+    },
+    "priceStep": {
+      "type": "number"
+    },
+    "img": {
+      "type": "string"
+    },
+    "buyNowPrice": {
+      "type": "number"
+    },
+    "closed": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

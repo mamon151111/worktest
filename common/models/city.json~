@@ -1,0 +1,31 @@
+{
+  "name": "City",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "geopoint"
+    },
+    "countryId": {
+      "type": "integer"
+    }
+  },
+  "validations": [],
+  "relations": {
+  	"country": {
+  		"type": "belongsTo",
+  		"model": "country",
+  		"foreignKey": "countryId"
+  	}
+  },
+  "acls": [],
+  "methods": {}
+}

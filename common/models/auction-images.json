@@ -1,0 +1,21 @@
+{
+  "name": "AuctionImages",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "auctionId": {
+      "type": "number"
+    },
+    "img": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
