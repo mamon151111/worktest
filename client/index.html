@@ -2,27 +2,31 @@
 <html>
 <head>
     <title>Mega Auction</title>
-    <link rel="stylesheet" href=""/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <script src="js/node_modules/angular/angular.js"></script>
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css" >
 </head>
-<body ng-app>
-    <div class = 'header'>
+<body ng-app="AuctionApp">
+    <div class = 'header container-fluid'>
+        <img class="logo" src="img/HTML5_Logo_256.png">
         <h1>Mega auction</h1>
         <h2>Really, it's true</h2>
         <img class="logo">
         <a class="button" href="">Add lot</a>
     </div>
-    <div class =  'content'>
+    <div class =  'content container-fluid' ng-controller ='LotController'>
         <ul>
-            <li ng-repeat ='lot in auctions'>
+            <li ng-repeat ='lot in auctions.lots'>
                 <h3>{{lot.name}}</h3>
                 <p>{{lot.description}}</p>
             </li>
         </ul>
 
     </div>
-    <div class = 'footer'>
+    <div class = 'footer container-fluid'>
         <p>footer</p>
     </div>
-<script src="js/node_modules/angular/angular.js"></script>
+<script src="js/controllers/App.js"></script>
+<script src="js/controllers/LotController.js"></script>
 </body>
 </html>
