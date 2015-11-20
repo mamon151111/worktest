@@ -2,11 +2,24 @@
 <html>
 <head>
     <title>Mega Auction</title>
-
 </head>
 <body ng-app>
+    <div class = 'header'>
+        <h1>Mega auction</h1>
+        <h2>Really, it's true</h2>
+        <img class="logo">
+        <a class="button" href="">Add lot</a>
+    </div>
+    <div class =  'content'>
+        <ul>
+            <li ng-repeat ='lot in auctions'>
+                <h3>{{lot.name}}</h3>
+                <p>{{lot.description}}</p>
+            </li>
+        </ul>
 
-
+    </div>
+    <div class = 'footer'></div>
 <script src="js/node_modules/angular/angular.js"></script>
 </body>
 </html>
