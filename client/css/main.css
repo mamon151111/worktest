@@ -1,0 +1,18 @@
+body *{
+    color: #FFF;
+}
+.header, .footer, .content{
+    padding: 20px;
+}
+.logo {
+    background: none;
+    width:9.1743119%;
+    float: left;
+}
+.header{
+    color: #FFF;
+    background: #2C3039 url("../img/header-bg.png") repeat scroll 0% 0% / 50px 50px;
+}
+.footer{
+    background: #2C3E50 none repeat scroll 0% 0%;
+}

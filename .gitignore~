@@ -17,4 +17,8 @@
 coverage
 node_modules
 npm-debug.log
-.gitignore
+.idea
+<<<<<<< HEAD
+
+=======
+>>>>>>> 05a10e6cf2c2ae590220b6eb5c0694a0320b9272
