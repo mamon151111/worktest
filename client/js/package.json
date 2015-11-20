@@ -1,0 +1,9 @@
+{
+    "name": "mega-auction",
+    "dependencies": {
+        "angular": "1.4.x",
+        "angular-mocks": "1.4.x",
+        "bootstrap": "~3.1.1",
+        "angular-route": "1.4.x"
+    }
+}

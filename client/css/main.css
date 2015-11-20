@@ -16,3 +16,7 @@ body *{
 .footer{
     background: #2C3E50 none repeat scroll 0% 0%;
 }
+
+.content * {
+    color: #000
+}

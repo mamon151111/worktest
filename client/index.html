@@ -4,6 +4,7 @@
     <title>Mega Auction</title>
     <link rel="stylesheet" href="css/main.css"/>
     <script src="js/node_modules/angular/angular.js"></script>
+    <script src="js/node_modules/angular-route/angular-route.js"></script>
     <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css" >
 </head>
 <body ng-app="AuctionApp">
@@ -14,19 +15,14 @@
         <img class="logo">
         <a class="button" href="">Add lot</a>
     </div>
-    <div class =  'content container-fluid' ng-controller ='LotController'>
-        <ul>
-            <li ng-repeat ='lot in auctions.lots'>
-                <h3>{{lot.name}}</h3>
-                <p>{{lot.description}}</p>
-            </li>
-        </ul>
 
-    </div>
+    <div ng-view></div>
+
     <div class = 'footer container-fluid'>
         <p>footer</p>
     </div>
-<script src="js/controllers/App.js"></script>
+<script src="js/App.js"></script>
+<script src="js/routes.js"></script>
 <script src="js/controllers/LotController.js"></script>
 </body>
 </html>
