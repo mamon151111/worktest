@@ -61,5 +61,17 @@
     "public": true,
     "$promise": {},
     "$resolved": true
+  },
+  "AuctionUser": {
+    "dataSource": "mongodb",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "AuctionAccessToken": {
+    "dataSource": "mongodb",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
   }
 }

@@ -7,7 +7,7 @@
 });
 */
 
-AuctionControllers.controller('LotController', ['$scope', '$routeParams', '$http',
+AuctionApp.controller('LotController', ['$scope', '$routeParams', '$http',
     function($scope, $routeParams, $http) {
         $scope.auctions = {
             lots: []

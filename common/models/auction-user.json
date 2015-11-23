@@ -1,0 +1,27 @@
+{
+  "name": "AuctionUser",
+  "base": "User",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "phone": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+    "relations": {
+        "accessTokens": {
+            "type": "hasMany",
+            "model": "AuctionAccessToken",
+            "foreignKey": "userId",
+            "options": {
+                "disableInclude": true
+            }
+        }
+    },
+  "acls": [],
+  "methods": {}
+}

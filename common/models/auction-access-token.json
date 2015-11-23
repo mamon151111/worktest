@@ -1,0 +1,37 @@
+{
+  "name": "AuctionAccessToken",
+  "base": "AccessToken",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+    "relations": {
+        "user": {
+            "type": "belongsTo",
+            "model": "AuctionUser",
+            "foreignKey": "userId"
+        }
+    },
+  "acls": [
+      {
+          "principalType": "ROLE",
+          "principalId": "$everyone",
+          "permission": "DENY"
+      },
+      {
+          "principalType": "ROLE",
+          "principalId": "$everyone",
+          "property": "create",
+          "permission": "ALLOW"
+      },
+      {
+          "principalType": "ROLE",
+          "principalId": "$owner",
+          "permission": "ALLOW"
+      }
+  ],
+  "methods": {}
+}

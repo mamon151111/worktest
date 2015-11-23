@@ -1,0 +1,52 @@
+<form name="userregform" ng-controller="AuthController" ng-submit="registerUser(userregform, user)" novalidate="">
+    <div>
+        <label for="emailfield" class="required">E-mail</label>
+        <input id="emailfield" type="email" name="email" ng-model="user.email" required=""/>
+        <div class="error">
+            <span ng-show="(userregform.$submitted || userregform.email.$touched) && userregform.email.$error.required">
+                E-mail is required!
+            </span>
+            <span ng-show="(userregform.$submitted || userregform.email.$touched) && userregform.email.$error.email">
+                Your e-mail is invalid!
+            </span>
+        </div>
+    </div>
+    <div>
+        <label for="usernamefield" class="required">User name</label>
+        <input id="usernamefield" type="text" name="username" ng-model="user.username" required="" auth-username/>
+        <div class="error">
+            <span ng-show="(userregform.$submitted || userregform.username.$touched) && userregform.username.$error.required">
+                Username is required!
+            </span>
+            <span ng-show="(userregform.$submitted || userregform.username.$touched) && userregform.username.$error.username">
+                Your username is invalid!
+            </span>
+        </div>
+    </div>
+    <div>
+        <label for="passwordfield" class="required" >Password</label>
+        <input id="passwordfield" type="password" ng-model="user.password" name="password" required="" auth-password/>
+        <div class="error">
+            <span ng-show="(userregform.$submitted || password.$touched) && userregform.password.$error.required">
+                Password is required!
+            </span>
+            <span ng-show="(userregform.$submitted || password.$touched) && userregform.password.$error.authPassword">
+                Password is invalid!
+            </span>
+        </div>
+    </div>
+    <div>
+        <label for="confirmpasswordfield" class="required">Confirm Password</label>
+        <input id="confirmpasswordfield" type="password" name="confirmpassword" ng-model="confirmpassword" required="" auth-password-confirm password="user.password""/>
+        <div class="error">
+            <span ng-show="(userregform.$submitted || userregform.confirmpassword.$touched) && userregform.confirmpassword.$error.authPasswordConfirm">
+                Confirmed password is not equal to original!
+            </span>
+        </div>
+    </div>
+    <div>
+        <label for="phonefield" class="required">Phone</label>
+        <input id="phonefield" type="text" name="phone" ng-model="user.phone"/>
+    </div>
+    <input type="submit" value="Save">
+</form>
