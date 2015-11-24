@@ -4,7 +4,7 @@ AuctionApp.config(['$authProvider', function($authProvider) {
         apiUrl:                  '/api',
         signOutUrl:              '/AuctionUsers/logout',
         emailRegistrationPath:   '/AuctionUsers',
-        accountUpdatePath:       '/AuctionUsers',
+        accountUpdatePath:       '/AuctionUsers/{id}',
         emailSignInPath:         '/AuctionUsers/login',
         storage:                 'localStorage',
         tokenValidationPath:     '/AuctionAccessTokens/{id}/user',

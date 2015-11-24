@@ -1,5 +1,6 @@
 var AuctionApp = angular.module('AuctionApp', [
     'ngRoute',
-    'ng-token-auth'
+    'ng-token-auth',
+    'Lot'
 ]);
 

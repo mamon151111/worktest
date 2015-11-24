@@ -1,0 +1,33 @@
+<form ng-controller="LotListController" ng-submit="saveLot(form)">
+    <div>
+        <label for="title">Title</label>
+        <input id="title" type="text" name="title" ng-model="title"/>
+    </div>
+    <div>
+        <label for="description">Description</label>
+        <textarea id="description" name="description" ng-model="description">
+
+        </textarea>
+    </div>
+    <div>
+        <label for="start-price">Start bet</label>
+        <input id="start-price" type="number" min="0" name="startPrice" ng-model="startPrice"/>
+    </div>
+    <div>
+        <label for="buy-now-price">Buy Now Price</label>
+        <input id="buy-now-price" type="number" min="0" name="buyNowPrice" ng-model="buyNowPrice"/>
+    </div>
+    <div>
+        <label for="price-step">Min. Rise</label>
+        <input id="price-step" type="number" min="0" name="priceStep" ng-model="priceStep"/>
+    </div>
+    <div>
+        <label for="time-end">End Time</label>
+        <input id="time-end" type="text" min="0" name="priceStep" ng-model="endTime" datepicker/>
+    </div>
+    <div ng-show="id && owner">
+        <label for="closed">Closed</label>
+        <input id="closed" type="checkbox" name="closed" ng-model="closed"/>
+    </div>
+    <input type="submit" value="Send">
+</form>
