@@ -1,8 +1,8 @@
 <div class =  'content container-fluid' ng-controller ='LotController'>
-    <ul>
-        <li ng-repeat ='lot in auctions.lots'>
-            <h3>{{lot.title}}</h3>
-            <p>{{lot.description}}</p>
+    <ul class="lotlist">
+        <li ng-repeat ='lot in auctions.lots' class = 'lot'>
+            <h3 class="lot-title">{{lot.title}}</h3>
+            <p class="lot-desc">{{lot.description}}</p>
         </li>
     </ul>
 

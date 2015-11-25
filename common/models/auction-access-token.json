@@ -8,30 +8,30 @@
   },
   "properties": {},
   "validations": [],
-    "relations": {
-        "user": {
-            "type": "belongsTo",
-            "model": "AuctionUser",
-            "foreignKey": "userId"
-        }
-    },
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "AuctionUser",
+      "foreignKey": "userId"
+    }
+  },
   "acls": [
-      {
-          "principalType": "ROLE",
-          "principalId": "$everyone",
-          "permission": "DENY"
-      },
-      {
-          "principalType": "ROLE",
-          "principalId": "$everyone",
-          "property": "create",
-          "permission": "ALLOW"
-      },
-      {
-          "principalType": "ROLE",
-          "principalId": "$owner",
-          "permission": "ALLOW"
-      }
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "create"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
   ],
   "methods": {}
 }

@@ -2,8 +2,8 @@
 
 
 AuctionApp.controller('AuthController', ['$scope', '$routeParams', '$http',
-    '$auth', '$location', '$rootScope',
-    function($scope, $routeParams, $http, $auth, $location, $rootScope) {
+    '$auth', '$location', '$rootScope', '$route',
+    function($scope, $routeParams, $http, $auth, $location, $rootScope, $route) {
         /*$scope.user = {
             email: '',
             username: '',
@@ -12,8 +12,19 @@ AuctionApp.controller('AuthController', ['$scope', '$routeParams', '$http',
         };*/
 
         $scope.user = $auth.user;
+        $scope.title=$route.current.locals.title;
+        if ($scope.user.id && $location.url().match('/register')) {
 
-        $scope.registerUser = function(form, user) {
+            $location.url('/my_profile');
+
+            return;
+        }
+        else if(!$scope.user.id && $location.url().match('/my_profile')){
+            $location.url('/login');
+            return;
+        }
+
+        $scope.saveUser = function(form, user) {
             if (form.$valid) {
                 var func = user.id ? 'updateAccount' : 'submitRegistration';
                 $auth[func](user).then(function(response) {
@@ -33,9 +44,10 @@ AuctionApp.controller('AuthController', ['$scope', '$routeParams', '$http',
                             clientId: response.userId,
                             uid: response.userId
                         }, true);
-                        $auth.validateToken()
+                        $auth.validateToken();
                         $location.url('/');
                     });
             }
-        }
+        };
+
     }]);

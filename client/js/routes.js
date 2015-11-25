@@ -7,7 +7,16 @@ AuctionApp.config(['$routeProvider', '$httpProvider', function($routeProvider, $
         controller: 'AuthController'
     }).when('/register', {
             templateUrl: 'views/register.html',
-            controller: 'AuthController'
+            controller: 'AuthController',
+        resolve:{
+            title: function(){return 'Register'}
+        }
+    }).when('/my_profile', {
+        templateUrl: 'views/register.html',
+        controller: 'AuthController',
+        resolve:{
+            title: function(){return 'My Profile'}
+        }
     }).otherwise({
             redirectTo: '/'
         });

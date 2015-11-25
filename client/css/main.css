@@ -1,7 +1,17 @@
 body *{
     color: #FFF;
+
 }
-.header, .footer, .content{
+
+/*
+general styles
+main template section
+lotlist
+*/
+
+
+/* main template section*/
+.header, .footer,{
     padding: 20px;
 }
 .logo {
@@ -17,6 +27,47 @@ body *{
     background: #2C3E50 none repeat scroll 0% 0%;
 }
 
-.content * {
-    color: #000
+.content {
+    padding: 10px;
+    color: #000;
+    background: #ECF0F1 none repeat scroll 0% 0%;
 }
+/*general styles*/
+
+.form_label{
+    color: black;
+    width:50%;
+}
+.form-input{
+    color:#000000;
+    width:50%;
+    margin-bottom: 5px;
+}
+.blue-header{
+    color: #34495E;
+}
+.error, .error * {
+    color:red;
+}
+
+
+/*lotlist*/
+
+.lotlist {
+    list-style: none;
+}
+.lot{
+    border : 1px solid black;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    background-color: #ffffff;
+
+}
+.lot-title{
+    color: #34495E;
+}
+.lot-desc{
+    color: #34495E;
+}
+
+/*registration*/
