@@ -1,64 +1,67 @@
-;(function(window, angular, undefined) {'use strict';
+(function (window, angular) {'use strict';
     angular.module('Lot', ['ngRoute', 'ng-token-auth']).provider('LotsList', [function LotsListProvider() {
 
-        var emptyFn = function() {};
-        var LotsList = this;
-        var defaultListConfig = {
-            readUrl: '/api/Auctions'
-        };
-        var defaultLotConfig = {
-            baseApiUrl: '/api',
-            addModelUrl: '/Auctions',
-            updateModelUrl: '/Auctions',
-            readModelUrl: '/Auctions/{id}',
-            deleteModelUrl: '/Auctions/{id}',
+        var emptyFn = function () {}, LotsList = this,
+            defaultListConfig = {
+                readUrl: '/api/Auctions',
+                lotConfig: {}
+            },
+            defaultLotConfig = LotsList.config = {
+                baseApiUrl: '/api',
+                addModelUrl: '/Auctions',
+                updateModelUrl: '/Auctions/{id}',
+                readModelUrl: '/Auctions/{id}',
+                deleteModelUrl: '/Auctions/{id}',
 
-            addModelSuccessCallback: emptyFn,
-            addModelFailureCallback: emptyFn,
-            updateModelSuccessCallback: emptyFn,
-            updateModelFailureCallback: emptyFn,
-            deleteModelSuccessCallback: emptyFn,
-            deleteModelFailureCallback: emptyFn
+                addModelSuccessCallback: emptyFn,
+                addModelFailureCallback: emptyFn,
+                updateModelSuccessCallback: emptyFn,
+                updateModelFailureCallback: emptyFn,
+                deleteModelSuccessCallback: emptyFn,
+                deleteModelFailureCallback: emptyFn
 
-        };
-        var listDefaultValues = {
-            owner: 0,
-            timeStart: new Date(),
-            timeEnd: new Date(),
-            title: '',
-            description: '',
-            startPrice: 0,
-            lastPrice: 0,
-            priceStep: 0,
-            img: '',
-            buyNowPrice: 0,
-            closed: false,
-            id: null
-        };
+            },
+            listDefaultValues = {
+                owner: 0,
+                timeStart: new Date(),
+                timeEnd: new Date(),
+                title: '',
+                description: '',
+                startPrice: 0,
+                lastPrice: 0,
+                priceStep: 0,
+                img: '',
+                buyNowPrice: 0,
+                closed: false,
+                id: null
+            };
 
 
 
         return {
-            $get: ['$http', (function(LotsList) {
-                return function($http) {
+            $get: ['$http', (function (LotsList) {
+                return function ($http) {
 
                     LotsList.lotsList = [];
-                    LotsList.createLot = function(values, config) {
+                    LotsList.createLot = function (values, config) {
 
                         var ready = false;
 
                         function applyUrl(url, config) {
-                            var val;
-                            for (var i in config) {
-                                var val = config[i];
-                                if (typeof(val) == "number") {
-                                    val += "";
+                            var val, i, reg;
+
+                            for (i in config) {
+                                if (config.hasOwnProperty(i)) {
+                                    val = config[i];
+                                    if (typeof val === "number") {
+                                        val += "";
+                                    }
+                                    if (typeof val === "string") {
+                                        reg = new RegExp('\\{' + i + '\\}', 'g');
+
+                                        url = url.replace(reg, val);
+                                    }
                                 }
-                                if (typeof(val) != "string") {
-                                    continue;
-                                }
-                                var reg = new RegExp('\{' + i + '\}', 'g');
-                                url = url.replace(reg, val);
                             }
                             return url;
                         }
@@ -80,8 +83,8 @@
 
                             this.config = angular.extend({}, defaultLotConfig, config);
 
-                            if (typeof(values) == "object") {
-                                makeByValues.call(this, values)
+                            if (typeof values === "object") {
+                                makeByValues.call(this, values);
                             } else {
                                 makeById.call(this, values);
                             }
@@ -91,37 +94,37 @@
 
 
 
-                        Lot.prototype.addModel = function() {
+                        Lot.prototype.addModel = function () {
                             var L = this;
-                            return $http.post(applyUrl(this.config.baseApiUrl + this.addModelUrl, this.values), this.values).then(function(resp) {
-                                L.values = response;
+                            return $http.post(applyUrl(this.config.baseApiUrl + this.config.addModelUrl, this.values), this.values).then(function (response) {
+                                L.values = response.data;
                                 L.config.addModelSuccessCallback.call(L, response);
                                 return this;
-                            }, function(resp) {
-                                L.addModelFailureCallback(response);
+                            }, function (response) {
+                                L.config.addModelFailureCallback(response);
                                 return this;
                             });
                         };
                         Lot.prototype.updateModel = function() {
                             var L = this;
-                            return $http.put(applyUrl(this.config.baseApiUrl + this.updateModelUrl, this.values), this.values).then(function(resp) {
-                                L.values = response;
+                            return $http.put(applyUrl(this.config.baseApiUrl + this.config.updateModelUrl, this.values), this.values).then(function(response) {
+                                L.values = response.data;
                                 L.config.updateModelSuccessCallback(response);
                                 return this;
                             }, function(resp) {
-                                L.updateModelSuccessCallback.call(L, response);
+                                L.config.updateModelSuccessCallback.call(L, response);
                                 return this;
                             });
                         };
 
                         Lot.prototype.deleteModel = function() {
                             var L = this;
-                            return $http.delete(applyUrl(this.config.baseApiUrl + this.deleteModelUrl, this.values), this.values).then(function(resp) {
+                            return $http.delete(applyUrl(this.config.baseApiUrl + this.config.deleteModelUrl, this.values), this.values).then(function(resp) {
                                 L.values = L.defultValues;
                                 L.config.deleteModelFailureCallback(response);
                                 return this;
                             }, function(resp) {
-                                L.deletelFailureCallback.call(L, response);
+                                L.config.deletelFailureCallback.call(L, response);
                                 return this;
                             });
                         };
@@ -138,13 +141,25 @@
                             ready = false;
 
 
-                            $http.get(applyUrl(this.config.baseApiUrl + this.readModelUrl, this.values)).then(function(response) {
-                                L.values = response;
+                            $http.get(applyUrl(this.config.baseApiUrl + this.config.readModelUrl, this.values)).then(function(response) {
+                                L.values = response.data;
                                 callback(response);
                                 ready = true;
                             });
                             return this;
                         };
+
+                        Lot.prototype.set = function(field, value) {
+                            if (value === undefined && typeof(field) == "object") {
+                                for (var i in field) {
+                                    this.values[i] = field[i];
+                                }
+                            } else if (typeof(field) == "string" || !isNaN(field)) {
+                                this.values[field] = value;
+                            } else {
+                                throw "Invalid parameters passed to Lot's set method.";
+                            }
+                        }
 
                         return new Lot(values, config);
                     };
@@ -154,6 +169,7 @@
                         var _this = this;
                         filter = filter || {};
                         callback = callback || emptyFn;
+
                         $http.get(defaultListConfig.readUrl + '?filter=' + JSON.stringify(filter)).success(function(data) {
                             _this.lotsList = [];
                             if (Array.isArray(data)) {
@@ -181,6 +197,12 @@
                         for (var i = 0; i < data.length; i++) {
                             this.lotsList.push(this.createLot(data[i]));
                         }
+                        return this;
+                    };
+
+                    LotsList.configure = function(config) {
+                        config = config || {};
+                        this.config = angular.extend({}, defaultListConfig, config);
                         return this;
                     };
                     return LotsList;

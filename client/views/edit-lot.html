@@ -1,33 +1,34 @@
-<form ng-controller="LotListController" ng-submit="saveLot(form)">
+<form name="lotform" ng-controller="LotListController" ng-submit="saveLot(lotform, lotItem.values)" novalidate>
     <div>
         <label for="title">Title</label>
-        <input id="title" type="text" name="title" ng-model="title"/>
+        <input id="title" type="text" name="title" ng-model="lotItem.values.title"/>
     </div>
     <div>
         <label for="description">Description</label>
-        <textarea id="description" name="description" ng-model="description">
+        <textarea id="description" name="description" ng-model="lotItem.values.description">
 
         </textarea>
     </div>
     <div>
         <label for="start-price">Start bet</label>
-        <input id="start-price" type="number" min="0" name="startPrice" ng-model="startPrice"/>
+        <input id="start-price" type="number" min="0" name="startPrice" ng-model="lotItem.values.startPrice"/>
     </div>
     <div>
         <label for="buy-now-price">Buy Now Price</label>
-        <input id="buy-now-price" type="number" min="0" name="buyNowPrice" ng-model="buyNowPrice"/>
+        <input id="buy-now-price" type="number" min="0" name="buyNowPrice" ng-model="lotItem.values.buyNowPrice"/>
     </div>
     <div>
         <label for="price-step">Min. Rise</label>
-        <input id="price-step" type="number" min="0" name="priceStep" ng-model="priceStep"/>
+        <input id="price-step" type="number" min="0" name="priceStep" ng-model="lotItem.values.priceStep"/>
     </div>
     <div>
         <label for="time-end">End Time</label>
-        <input id="time-end" type="text" min="0" name="priceStep" ng-model="endTime" datepicker/>
+        <input id="time-end" type="text"   name="timeEnd" ng-model="lotItem.values.timeEnd" datepicker/>
+
     </div>
     <div ng-show="id && owner">
         <label for="closed">Closed</label>
-        <input id="closed" type="checkbox" name="closed" ng-model="closed"/>
+        <input id="closed" type="checkbox" name="closed" ng-model="lotItem.values.closed"/>
     </div>
     <input type="submit" value="Send">
 </form>

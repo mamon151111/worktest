@@ -3,8 +3,14 @@ AuctionApp.directive('datepicker', function() {
         restrict: 'A',
         require : 'ngModel',
         link : function (scope, element, attrs, ngModelCtrl) {
+            var dateFormat = 'mm/dd/yy';
+            ngModelCtrl.$formatters.push(function(data) {
+                if (data) {
+                    return $.datepicker.formatDate(dateFormat, new Date(data));
+                }
+            });
             (function($) {
-                var dateFormat = 'mm/dd/yy';
+
                 $(element).datepicker({
                     dateFormat:dateFormat,
                     onSelect:function (date) {
