@@ -2,7 +2,7 @@
 
 
 AuctionApp.controller('AuthController', ['$scope', '$routeParams', '$http',
-    '$auth', '$location', '$rootScope', '$route',
+    '$auth', '$location', '$rootScope', '$route', '$rootScope',
     function($scope, $routeParams, $http, $auth, $location, $rootScope, $route) {
         /*$scope.user = {
             email: '',
@@ -27,12 +27,16 @@ AuctionApp.controller('AuthController', ['$scope', '$routeParams', '$http',
         $scope.saveUser = function(form, user) {
             if (form.$valid) {
                 var func = user.id ? 'updateAccount' : 'submitRegistration';
-                $auth[func](user).then(function(response) {
+                var data = angular.extend({}, user);
+                delete data.clientId;
+                delete data.uid;
+                $auth[func](data).then(function(response) {
                     $scope.login(form, user);
 
                 }).catch(function(response) {});
             }
         };
+
         $scope.login = function(form, user) {
             if (form.$valid) {
                 $auth.submitLogin({

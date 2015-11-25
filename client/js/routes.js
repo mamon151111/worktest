@@ -1,7 +1,7 @@
 AuctionApp.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
     $routeProvider.when('/', {
         templateUrl: 'views/lotslist.html',
-        controller: 'LotController'
+        controller: 'LotListController'
     }).when('/login', {
         templateUrl: 'views/login.html',
         controller: 'AuthController'
@@ -17,7 +17,10 @@ AuctionApp.config(['$routeProvider', '$httpProvider', function($routeProvider, $
         resolve:{
             title: function(){return 'My Profile'}
         }
-    }).otherwise({
+    }).when('/edit-lot', {
+            templateUrl: 'views/edit-lot.html',
+            controller: 'AuthController'
+        }).otherwise({
             redirectTo: '/'
         });
 
@@ -60,9 +63,12 @@ AuctionApp.config(['$routeProvider', '$httpProvider', function($routeProvider, $
                                     req.url = URI(req.url).removeSearch('access_token') + '';
                                 }
                                 var tokenValidationPath = $auth.apiUrl() + $auth.getConfig().tokenValidationPath;
+                                var updateProfilePath = $auth.apiUrl() + $auth.getConfig().accountUpdatePath;
                                 //alert(tokenValidationPath);
                                 if (req.url.match(tokenValidationPath)) {
                                     req.url = req.url.replace('{id}', _ref.token);
+                                } else if (req.method.toLowerCase() == "put" && req.url.match(updateProfilePath)) {
+                                    req.url = req.url.replace('{id}', _ref.uid);
                                 }
                             }
 
@@ -74,3 +80,4 @@ AuctionApp.config(['$routeProvider', '$httpProvider', function($routeProvider, $
         }
     ]);
 }]);
+

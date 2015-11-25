@@ -3,7 +3,7 @@
 /* Lot Controller */
 
 
-angular.module('AuctionApp').controller('LotController', ['$scope', '$routeParams', '$http', 'LotsList',
+angular.module('AuctionApp').controller('LotListController', ['$scope', '$routeParams', '$http', 'LotsList',
     function($scope, $routeParams, $http, LotsList) {
         $scope.auctions = {
             lots: []
