@@ -10,9 +10,8 @@ AuctionApp.controller('AuthController', ['$scope', '$routeParams', '$http',
             password: '',
             confirmpassword: ''
         };*/
-
         $scope.user = $auth.user;
-        $scope.title=$route.current.locals.title;
+       //$scope.title=$route.current.locals.title;
         if ($scope.user.id && $location.url().match('/register')) {
 
             $location.url('/my_profile');
@@ -53,5 +52,33 @@ AuctionApp.controller('AuthController', ['$scope', '$routeParams', '$http',
                     });
             }
         };
+        $scope.logout = function(){
+            $auth.signOut();
+        }
 
-    }]);
+    }]).directive('userMenu', ['$compile',function($compile) {
+        function link (scope,element,attributes) {
+        scope.$watch(attributes.username, function(value) {
+                if(value){
+                    var template = "<a ng-click='logout()' class='btn-link'>Logout</a>";
+                    var el = angular.element(template);
+                    var compiled = $compile(el);
+                    element.children().remove();
+                    element.prepend(el);
+                    compiled(scope);
+                }
+                else{
+                    var template = "<a href='#/login'>Login</a>";
+                    var el = angular.element(template);
+                    element.children().remove();
+                    element.prepend(el);
+                }
+            });
+        }
+
+        return {
+            link: link
+        };
+
+
+}]);

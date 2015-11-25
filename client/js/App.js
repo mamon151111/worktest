@@ -4,3 +4,4 @@ var AuctionApp = angular.module('AuctionApp', [
     'Lot'
 ]);
 
+
