@@ -70,7 +70,7 @@ AuctionApp.config(['$routeProvider', '$httpProvider', function($routeProvider, $
                                 } else if (req.method.toLowerCase() == "put" && req.url.match(updateProfilePath)) {
                                     req.url = req.url.replace('{id}', _ref.uid);
                                 }
-                                if(req.url.match('/logout')){
+                                if(req.url.match('AuctionUsers/logout')){
                                     req.method='post';
                                 }
                             }

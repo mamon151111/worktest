@@ -1,5 +1,5 @@
-<h1 class="blue-header">{{title}}</h1>
 <form name="userregform" ng-controller="AuthController" ng-submit="saveUser(userregform, user)" novalidate="">
+    <h1 class="blue-header">{{user.username | ProfileTitleFilter}}</h1>
     <div class = form_field>
         <label for="emailfield" class="required form_label">E-mail</label>
         <input id="emailfield" type="email" name="email" class="form-input" ng-model="user.email" required=""/>

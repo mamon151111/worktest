@@ -1,11 +1,11 @@
-angular.module('AuctionApp').filter('username', function() {
+angular.module('AuctionApp').filter('username', function () {
 
-    return function(value) {
+    return function (value) {
         if (value) {
             return value;
         } else {
             return 'Guest';
         }
-    }
+    };
 
-})
+});
