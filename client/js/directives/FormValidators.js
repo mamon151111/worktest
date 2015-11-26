@@ -1,8 +1,10 @@
-AuctionApp.directive('authPassword', function() {
+
+AuctionApp.directive('authPassword', function () {
+    'use strict';
     return {
         require: 'ngModel',
-        link: function(scope, elm, attrs, ctrl) {
-            ctrl.$validators.authPassword = function(modelValue, viewValue) {
+        link: function (scope, elm, attrs, ctrl) {
+            ctrl.$validators.authPassword = function (modelValue, viewValue) {
 
                 if (!scope.user) {
                     return true;
@@ -20,42 +22,44 @@ AuctionApp.directive('authPassword', function() {
                     return false;
                 }
                 return true;
-            }
+            };
 
         }
-    }
+    };
 });
 
-AuctionApp.directive('authPasswordConfirm', function() {
+AuctionApp.directive('authPasswordConfirm', function () {
+    'use strict';
     return {
         require: 'ngModel',
         scope: {
             password: '=password'
         },
-        link: function(scope, elm, attrs, ctrl) {
+        link: function (scope, elm, attrs, ctrl) {
 
-            ctrl.$validators.authPasswordConfirm = function(modelValue, viewValue) {
+            ctrl.$validators.authPasswordConfirm = function (modelValue, viewValue) {
                 if (!scope.password) {
                     return true;
                 }
 
-                if (scope.password !==modelValue) {
+                if (scope.password !== modelValue) {
                     return false;
                 }
 
                 return true;
-            }
+            };
 
         }
-    }
+    };
 });
 
-AuctionApp.directive('authUsername', function() {
+AuctionApp.directive('authUsername', function () {
+    'use strict';
     return {
         require: 'ngModel',
-        link: function(scope, elm, attrs, ctrl) {
+        link: function (scope, elm, attrs, ctrl) {
 
-            ctrl.$validators.username = function(modelValue, viewValue) {
+            ctrl.$validators.username = function (modelValue, viewValue) {
                 if (!modelValue) {
                     return true;
                 }
@@ -65,8 +69,8 @@ AuctionApp.directive('authUsername', function() {
                 }
 
                 return true;
-            }
+            };
 
         }
-    }
+    };
 });

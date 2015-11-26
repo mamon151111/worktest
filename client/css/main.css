@@ -20,3 +20,7 @@ body *{
 .content * {
     color: #000
 }
+
+.lot-item > a {
+    display: block;
+}

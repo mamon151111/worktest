@@ -1,26 +1,27 @@
-AuctionApp.directive('datepicker', function() {
+AuctionApp.directive('datepicker', function () {
+    'use strict';
     return {
         restrict: 'A',
         require : 'ngModel',
         link : function (scope, element, attrs, ngModelCtrl) {
             var dateFormat = 'mm/dd/yy';
-            ngModelCtrl.$formatters.push(function(data) {
+            ngModelCtrl.$formatters.push(function (data) {
                 if (data) {
                     return $.datepicker.formatDate(dateFormat, new Date(data));
                 }
             });
-            (function($) {
+            (function ($) {
 
                 $(element).datepicker({
-                    dateFormat:dateFormat,
-                    onSelect:function (date) {
+                    dateFormat: dateFormat,
+                    onSelect: function (date) {
                         scope.$apply(function () {
                             ngModelCtrl.$setViewValue(new Date(date));
                         });
                     }
                 });
-            })(jQuery);
+            }(jQuery));
 
         }
-    }
+    };
 });

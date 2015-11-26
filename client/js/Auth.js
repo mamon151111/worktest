@@ -1,5 +1,5 @@
-AuctionApp.config(['$authProvider', function($authProvider) {
-
+AuctionApp.config(['$authProvider', function ($authProvider) {
+    'use strict';
     $authProvider.configure({
         apiUrl:                  '/api',
         signOutUrl:              '/AuctionUsers/logout',
@@ -16,17 +16,17 @@ AuctionApp.config(['$authProvider', function($authProvider) {
             //"expiry":       "{{ expiry }}",
             "uid":          "{{ userId }}"
         },
-        parseExpiry: function(headers) {
+        parseExpiry: function (headers) {
             // convert from UTC ruby (seconds) to UTC js (milliseconds)
-            return (parseInt(headers['expiry']) * 1000) || null;
+            return (parseInt(headers.expiry, 10) * 1000) || null;
         },
-        handleLoginResponse: function(response) {
+        handleLoginResponse: function (response) {
             return response;
         },
-        handleAccountUpdateResponse: function(response) {
+        handleAccountUpdateResponse: function (response) {
             return response.data;
         },
-        handleTokenValidationResponse: function(response) {
+        handleTokenValidationResponse: function (response) {
             var result = {};
             result.uid = result.clientId = result.id = response.id;
             result.username = response.username;

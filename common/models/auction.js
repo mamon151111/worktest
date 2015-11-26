@@ -1,3 +1,4 @@
-module.exports = function(Auction) {
+module.exports = function (Auction) {
+    'use strict';
 
 };
