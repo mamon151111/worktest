@@ -5,12 +5,12 @@
             <label for="usernamefield" class="required form_label">User name</label>
             <input id="usernamefield" type="text" name="username" class="form-input" ng-model="authcontroller.user.username" required="" auth-username/>
             <div class="error">
-            <span ng-show="(userregform.$submitted || userregform.username.$touched) && userregform.username.$error.required">
-                Username is required!
-            </span>
-            <span ng-show="(userregform.$submitted || userregform.username.$touched) && userregform.username.$error.username">
-                Your username is invalid!
-            </span>
+                <span ng-show="(userregform.$submitted || userregform.username.$touched) && userregform.username.$error.required">
+                    Username is required!
+                </span>
+                <span ng-show="(userregform.$submitted || userregform.username.$touched) && userregform.username.$error.username">
+                    Your username is invalid!
+                </span>
             </div>
         </div>
         <div>

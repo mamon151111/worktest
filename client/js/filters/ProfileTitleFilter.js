@@ -1,7 +1,7 @@
 angular.module('AuctionApp').filter('ProfileTitleFilter', function () {
 
     return function (value) {
-        if (value == 'Guest') {
+        if (value === 'Guest') {
             console.log('register '+value);
             return 'Register';
         } else {

@@ -1,0 +1,64 @@
+<div class="pop-up">
+    <div class="login-logo">
+        <img src ="img/yask-logo.png">
+    </div>
+    <a class="popup-close"><span class="yask-icon icon-x"></span></a>
+    <div class="nav">
+        <a href="">Login</a>
+        <a href="">Register</a>
+    </div>
+    <form name="userregform" class="loginFrm" ng-controller="AuthController as authcontroller" ng-submit="login(userregform, authcontroller.user)" novalidate="">
+        <div>
+            <dl>
+                <dt>
+            <label for="usernamefield" class="required label">User name</label>
+                </dt>
+                <dd>
+                    <input id="usernamefield" type="text" class="popup-input" name="username" ng-model="authcontroller.user.username" required="" auth-username/>
+            <div class="error">
+            <span ng-show="(userregform.$submitted || userregform.username.$touched) && userregform.username.$error.required">
+                Username is required!
+            </span>
+            <span ng-show="(userregform.$submitted || userregform.username.$touched) && userregform.username.$error.username">
+                Your username is invalid!
+            </span>
+            </div>
+                </dd>
+            </dl>
+        </div>
+        <div>
+            <dl>
+                <dt>
+                <label for="passwordfield" class="required label" >Password</label>
+                </dt>
+                <dd>
+                    <input id="passwordfield" class="popup-input" type="password" ng-model="authcontroller.user.password" name="password" required="" auth-password/>
+            <div class="error">
+            <span ng-show="(userregform.$submitted || userregform.password.$touched) && userregform.password.$error.required">
+                Password is required!
+            </span>
+            <span ng-show="(userregform.$submitted || userregform.password.$touched) && userregform.password.$error.authPassword">
+                Password is invalid!
+            </span>
+            </div>
+                </dd>
+            </dl>
+        </div>
+        <div class="switch">
+            <input type="checkbox"  name="rememberMe" id="rememberMe">
+            <label class="switch-label" for="rememberMe">
+                <span class="switch-container"><span class="switch-trigger"></span></span>
+                <span class="switch-text">Remember Me</span>
+            </label>
+        </div>
+        <a class="link-green remember-margin" href="">Forgot the password?</a>
+
+        <input type="submit" class="button-standard login-submit"value="Login">
+        <div class="login-social">
+            <a href="" class="btn_social btn_social_fb"><i class="fa fa-facebook"></i></a>
+            <a href="" class="btn_social btn_social_tw" ><i class="fa fa-twitter"></i></a>
+            <a href="" class="btn_social btn_social_go"><i class="fa fa-google-plus"></i></a>
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,133 @@
+@font-face {
+	font-family: 'yask-icons';
+	src:url('yask-icons.eot?h4igpv');
+	src:url('yask-icons.eot?h4igpv#iefix') format('embedded-opentype'),
+		url('yask-icons.ttf?h4igpv') format('truetype'),
+		url('yask-icons.woff?h4igpv') format('woff'),
+		url('yask-icons.svg?h4igpv#yask-icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*[class^="icon-"], [class*=" icon-"] {*/
+.yask-icon{
+    /* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'yask-icons' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-YASK:before {
+	content: "\e900";
+}
+.icon-x-s:before {
+	content: "\e901";
+}
+.icon-x:before {
+	content: "\e902";
+}
+.icon-v:before {
+	content: "\e903";
+}
+.icon-star:before {
+	content: "\e904";
+}
+.icon-s-pointer-icon:before {
+	content: "\e905";
+}
+.icon-single:before {
+	content: "\e906";
+}
+.icon-shopping:before {
+	content: "\e907";
+}
+.icon-rent-vehicle:before {
+	content: "\e908";
+}
+.icon-photo-icon:before {
+	content: "\e909";
+}
+.icon-pen:before {
+	content: "\e90a";
+}
+.icon-other:before {
+	content: "\e90b";
+}
+.icon-moto:before {
+	content: "\e90c";
+}
+.icon-l-pointer-icon:before {
+	content: "\e90d";
+}
+.icon-housekeeper:before {
+	content: "\e90e";
+}
+.icon-house:before {
+	content: "\e90f";
+}
+.icon-heart-1:before {
+	content: "\e910";
+}
+.icon-heart-0:before {
+	content: "\e911";
+}
+.icon-geolocation-icon:before {
+	content: "\e912";
+}
+.icon-eye:before {
+	content: "\e913";
+}
+.icon-export:before {
+	content: "\e914";
+}
+.icon-entire:before {
+	content: "\e915";
+}
+.icon-driver:before {
+	content: "\e916";
+}
+.icon-double:before {
+	content: "\e917";
+}
+.icon-copter:before {
+	content: "\e918";
+}
+.icon-cook:before {
+	content: "\e919";
+}
+.icon-car:before {
+	content: "\e91a";
+}
+.icon-camera:before {
+	content: "\e91b";
+}
+.icon-book-services:before {
+	content: "\e91c";
+}
+.icon-book-a-place:before {
+	content: "\e91d";
+}
+.icon-boat:before {
+	content: "\e91e";
+}
+.icon-bead-breakfast:before {
+	content: "\e91f";
+}
+.icon-babysitter:before {
+	content: "\e920";
+}
+.icon-apartment:before {
+	content: "\e921";
+}
+.icon-uniE922:before {
+	content: "\e922";
+}
+

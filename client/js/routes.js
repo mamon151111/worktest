@@ -11,6 +11,12 @@ AuctionApp.config(['$routeProvider', '$httpProvider', function($routeProvider, $
         resolve:{
             title: function(){return 'Register'}
         }
+    }).when('/login2', {
+        templateUrl: '/yask-login.html',
+        controller: 'AuthController',
+        resolve: {
+            title: function () {return 'Login2'; }
+        }
     }).when('/my_profile', {
         templateUrl: 'views/register.html',
         controller: 'AuthController',

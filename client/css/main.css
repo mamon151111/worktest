@@ -1,15 +1,22 @@
 body *{
     color: #FFF;
-
+    font-size:10px;
 }
-
 /*
 general styles
 main template section
 lotlist
 */
-
-
+img{
+    max-width: 100%;
+}
+a {
+    color:#000000;
+}
+a:hover {
+  color: #00dfd2;
+  text-decoration: none;
+}
 /* main template section*/
 .header, .footer,{
     padding: 20px;
@@ -70,4 +77,164 @@ lotlist
     color: #34495E;
 }
 
-/*registration*/
+/*
+login
+*/
+.pop-up{
+    background-color: rgba(255,255,255,0.5);
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+}
+.pop-up *{
+    font-family: 'RobotoRegular';
+    color:#000000;
+}
+.login-logo{
+    position: relative;
+    display: inline-block;
+    top:0;
+    margin-top:-3.0358306%;
+    margin-left: 40.1308195%;
+    width: 19.7383609%;
+    margin-bottom: 1.0586319%;
+}
+.pop-up .popup-close{
+    display: inline-block;
+    position: relative;
+    top:-9%;
+    margin-left: 35.3212774%;
+}
+
+.pop-up .popup-close:hover{
+    text-decoration: none;
+    cursor: pointer;
+}
+.pop-up .popup-close .yask-icon{
+    font-size: 1.85em;
+}
+.pop-up .nav{
+    margin-left: 46.3255098%;
+    margin-bottom: 6.1074919%;
+}
+.pop-up .nav *{
+    font-size:1.3em;
+    display: inline-block;
+    margin-right: 1.9238169%;
+}
+.pop-up .loginFrm{
+    width:20.2385533%;
+    margin-left: 39.9384379% ;
+}
+.pop-up .loginFrm *{
+    line-height: 0.776em;
+}
+.pop-up .label {
+    font-size: 1.2em;
+    padding-left: 0;
+    color: rgba(0,0,0,0.2);
+}
+.pop-up .switch{
+    display: inline-block;
+}
+.pop-up .switch input[type="checkbox"]{
+    display: none;
+}
+.pop-up .switch .switch-container{
+    display: inline-block;
+    cursor: pointer;
+    width:22px;
+    height:13px;
+    position: relative;
+    top:4px;
+    background-color: #ededed;
+    border-radius: 13px;
+    transition: margin 0.3s ease-in 0s;
+    transition: all 0.3s ease-in 0s;
+    border: 1px solid #a3a3a3;
+}
+.pop-up .switch .switch-trigger{
+    display: inline-block;
+    height: 13px;
+    position: relative;
+    left: -1px;
+    top:-1px;
+    width:13px;
+    border:1px solid #a3a3a3;
+    border-radius: 13px;
+    background-color: #FFFFFF;
+    transition: all 0.3s ease-in 0s;
+    transition: margin 0.3s ease-in 0s;
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
+}
+.pop-up .switch .switch-text{
+    cursor:pointer;
+    font-weight: 600;
+    font-size:1.2em;
+    vertical-align: middle;
+}
+.pop-up .switch input[type="checkbox"]:checked+.switch-label  .switch-container{
+    background-color:#00dfd2;
+}
+.pop-up .switch input[type="checkbox"]:checked + .switch-label .switch-trigger{
+    margin-left: 10px;
+}
+.pop-up .popup-input{
+    width: 100%;
+    font-size: 1.2em;
+    font-weight: 500;
+    border:none;
+    border-bottom: 1px solid #a3a3a3;
+    line-height: 2em;
+    padding-bottom: 3%;
+}
+.link-green{
+    font-size: 1.2em;
+    color:#00dfd2;
+}
+.pop-up .link-green.remember-margin{
+    margin-left: 11.9%;
+}
+.button-standard{
+    display: block;
+    height: 38px;
+    width:116px;
+    color:#000000;
+    border-radius: 2px;
+    font-size: 1.3em;
+    line-height: 1em;
+    background: transparent;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border:1px solid #00dfd2;
+}
+.pop-up .login-submit{
+    margin-top: 2.164831%;
+    display: inline-block;
+}
+.pop-up .login-social{
+    display: inline-block;
+    margin-left: 10%;
+}
+
+.pop-up .login-social .btn_social{
+    margin-left: 1px;
+
+}
+.pop-up .login-social .btn_social *{
+    font-size: 1.6em;
+}
+.pop-up .login-social .btn_social.btn_social_fb *{
+    color:#3e78db;
+}
+.pop-up .login-social .btn_social.btn_social_tw *{
+    color:#4dbcf4;
+}
+.pop-up .login-social .btn_social.btn_social_go *{
+    color:#cb252f;
+}
+
+
+
