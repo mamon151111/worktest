@@ -1,0 +1,646 @@
+html, html * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
+}
+
+html {
+    width: 100%;
+
+}
+
+body {
+    width: 100%;
+
+    font-size: 10px;
+    font-family: Roboto Regular, Times New Romon, Arial;
+}
+
+/**
+* Header
+*/
+
+.main-header {
+    width: 100%;
+}
+
+.main-header.index {
+    width: 100%;
+    height: 519px;
+
+    background: url(../img/header.jpg);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.main-header.index .main-menu .center img {
+    height: 100%;
+}
+
+.main-header.index .index-title {
+    margin-top: 134px;
+    text-align: center;
+    font-size: 4.5em;
+    color: #FFF;
+}
+
+.main-header.index .index-title .title {
+    margin-bottom: 40px;
+}
+
+.main-header.index .index-title a.btn {
+    display: inline-block;
+
+    width: 116px;
+    height: 35px;
+    padding-top: 11px;
+
+    background: #FFF;
+
+    font-size: 0.2888888889em;
+    color: #000;
+    text-decoration: none;
+
+}
+
+.main-header.index .index-title a.btn:hover {
+    text-decoration: underline;
+}
+
+
+.main-menu {
+    height: 75px;
+    padding-top: 25px;
+}
+
+.main-menu .logo {
+    float: left;
+
+}
+
+
+
+.main-menu.index .logo {
+    display: none;
+}
+
+.main-menu > .menu {
+    float: left;
+
+}
+.main-menu > .menu .container > li {
+    display: inline-block;
+    position: relative;
+
+}
+
+.main-menu > .menu .container > li > .main-menu-item > a {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 20px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-right: 5px;
+
+
+    font-size: 1.3em;
+    color: #FFF;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+
+}
+
+.main-menu > .menu .container > li > .main-menu-item > a:hover {
+    text-decoration: underline;
+}
+
+.main-menu > .menu .container > li > .main-menu-item.expanded > a {
+    color: #00dfd2
+}
+
+.main-menu > .menu .container > li > .main-menu-item.collapsed > a:after {
+    content: "∨";
+    margin-left: 10px;
+
+    font-size: 0.8em;
+
+}
+
+.main-menu > .menu .container > li > .main-menu-item.expanded {
+    background: #FFF;
+}
+
+.main-menu > .menu .container > li > .main-menu-item.expanded > a:after {
+    content: "∧";
+    margin-left: 10px;
+
+    font-size: 0.8em;
+
+}
+
+.main-menu > .menu .container > li > .main-menu-item ul {
+    position: absolute;
+
+    width: 100%;
+
+    background: inherit;
+}
+
+.main-menu > .menu .container > li > .main-menu-item ul li {
+    list-style: none;
+
+    display: block;
+}
+
+.main-menu > .menu .container > li > .main-menu-item ul li a {
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+
+    color: #000;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+.main-menu > .menu .container > li > .main-menu-item ul li a:hover {
+    text-decoration: underline;
+}
+
+.main-menu > .menu .collapsed .list {
+    display: none;
+}
+
+.main-menu > .center {
+    text-align: center;
+    height: 100%;
+}
+
+
+
+.main-menu > .auth {
+    float: right;
+    position: relative;
+    right: 20px;
+}
+
+.main-menu > .auth > ul > li {
+    display: inline-block;
+}
+
+.main-menu > .auth > ul > li a {
+    font-size: 1.3em;
+    color: #FFF;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    padding: 5px 10px;
+}
+
+.main-menu > .auth > ul > li a:hover {
+    text-decoration: underline;
+}
+
+.main-menu > .auth > ul > li a.offers {
+    border: 1px solid #FFF;
+}
+
+.main-menu > .auth > ul > li a.offers:hover {
+    background: #FFF;
+    color: #000;
+    text-decoration: none;
+}
+
+
+/**
+* Filters
+*/
+
+.filters {
+
+
+    width: 100%;
+    height: 71px;
+
+    font-size: 1.2em;
+}
+
+.filters .date-block {
+    float: left;
+
+    width: 23.904688701%;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: none;
+}
+
+.filters .date-block .datepicker {
+    width: 50%;
+    height: 100%;
+    padding: 20px 0;
+    float: left;
+}
+
+.filters .date-block .datepicker a {
+    float: left;
+    display: block;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    height: 31px;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 8px;
+
+    text-decoration: none;
+    color: #000;
+}
+
+.filters .date-block .datepicker a.last {
+    border-right: none;
+}
+
+.filters .date-block .datepicker a:hover, .filters .date-block .datepicker a.active {
+    color: #00dfd2;
+}
+
+.filters .date-block .datepicker a .expand {
+    float: right;
+    display: block;
+    margin-right: 20px;
+}
+
+.filters .date-block .datepicker a .expand:after {
+    content: "∨";
+
+    font-size: 0.8em;
+}
+
+.filters .search {
+    float: left;
+
+    height: 100%;
+    width: 52.190622598%;
+
+
+}
+
+.filters .search input {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+
+    text-align: center;
+    line-height: 1em;
+}
+
+
+.filters .button-block {
+    float: left;
+    clear: right;
+
+    width: 23.904688701%;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: none;
+}
+
+
+.filters .button-block .guest-number {
+    width: 41.935483871%;
+    height: 100%;
+    padding: 11px 0;
+    float: left;
+}
+
+.filters .button-block .guest-number a,
+.filters .button-block .yask a {
+    float: left;
+    display: inline-block;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    height: 48px;
+    width: 100%;
+    padding-top: 16px;
+
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.filters .button-block .guest-number a {
+    padding-left: 10px;
+}
+
+.filters .button-block .guest-number a:hover, .filters .button-block .guest-number a.active {
+    color: #00dfd2;
+}
+
+.filters .button-block .guest-number a .expand {
+    float: right;
+    display: block;
+    margin-right: 20px;
+}
+
+.filters .button-block .guest-number a .expand:after {
+    content: "∨";
+
+    font-size: 0.8em;
+}
+
+.filters .button-block .yask {
+    width: 58.064516129%;
+    height: 100%;
+    padding: 11px 0;
+    padding-right: 5%;
+    display: block;
+    float: left;
+
+    text-transform: uppercase;
+
+}
+
+.filters .button-block .yask a {
+    vertical-align: middle;
+    background: #00dfd2;
+
+    text-align: center;
+}
+
+.filters .button-block .yask a img {
+    /*float: left;*/
+    height: 1.3em;
+    display: inline-block;
+    border: none;
+
+}
+
+.filters .button-block .yask a span {
+    vertical-align: top;
+    display: inline-block;
+}
+.filters .button-block .yask a span:before {
+    content: "";
+    position: relative;
+    top: 0.2em;
+    height: 1.3em;
+    width: 1.3em;
+    display: inline-block;
+    border: none;
+    margin-right: 0.5em;
+
+
+    background: url("../img/shape5.png");
+    background-size: 100% 100%;
+}
+/**
+*  Modules
+*/
+
+.modules {
+    width: 100%;
+    overflow: hidden;
+    padding-top: 10em;
+    padding-bottom: 8.1em;
+}
+.modules .module {
+    width: 33%;
+    text-align: center;
+    float: left;
+    border: 0;
+}
+
+.modules .module h2 {
+    font-size: 1.9em;
+    font-family: RobotoSlab Bold, Times New Romon, Arial;
+}
+
+.modules .module.services {
+    clear: right;
+}
+
+.modules .module .icon {
+    position: relative;
+    height: 20.8em;
+}
+
+.modules .module .icon div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.modules .module .module-description {
+    margin-top: 3.33em;
+    font-size: 1.2em;
+    color: rgba(0,0,0, 0.5);
+    line-height: 1.8em;
+}
+
+/**
+*  Guide description
+*/
+
+.guide-descr {
+    background: #2590f5;
+    text-align: center;
+    color: #FFF;
+    padding-top: 12.5em;
+    padding-bottom: 11.5em;
+}
+
+.guide-descr > p {
+    line-height: 2em;
+}
+
+.guide-descr .top-desc {
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+.guide-descr .middle-desc {
+    font-size: 5.7em;
+}
+
+.guide-descr .bottom-desc {
+    font-size: 1.8em;
+}
+
+/**
+*  Slider
+*/
+
+.slider {
+    position: relative;
+
+    width: 100%;
+    height: 65em;
+    overflow: hidden;
+}
+.slider div {
+    position: relative;
+
+    height: 100%;
+    width: 100%;
+
+    text-align: center;
+}
+.slider .container {
+    position: relative;
+    overflow-y: hidden;
+}
+.slider > .container > .item.hor-container {
+    width: 100%;
+    float: left;
+    display: inline-block;
+    height: 100%;
+    max-width: 100%;
+}
+.slider img {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+.slider .hor-container > div {
+    width: 50%;
+    height: 100%;
+    float: left;
+
+}
+
+.slider .ver-container > div {
+    height: 50%;
+    width: 100%;
+}
+
+.slider .photo span {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 0;
+
+    width: 100%;
+    margin-top: -0.5em;
+
+    color: #FFF;
+    font-size: 3em;
+    text-align: center;
+}
+
+.slider .scroll{
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+
+    margin-top: -1em;
+    width: 2em;
+    height: 2em;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+
+    background: #FFF;
+
+    font-size: 3em;
+    line-height: 1em;
+    text-align: center;
+
+    cursor: pointer;
+
+
+}
+
+.slider .scroll:hover {
+    color: #00dfd2;
+}
+
+.slider .prev {
+    left: 3.2em
+}
+
+.slider .next {
+    right: 3.2em
+}
+
+/**
+*  More From Yask
+*/
+
+.more-from-yask {
+    padding: 9.090909090909em;
+
+    font-size: 1.1em;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+/**
+*  Blog
+*/
+
+.blog {
+    width: 100%;
+}
+.blog .clear {
+    clear: both;
+}
+
+.blog .article {
+    float: left;
+
+    width: 33.3333333%;
+    border: 0;
+}
+.blog .article.last {
+    clear: right;
+}
+
+.blog .article > a {
+    position: relative;
+    width: 100%;
+    display: block;
+
+    text-align: center;
+    color: #FFF;
+}
+.blog .article > a img {
+    width: 100%;
+}
+
+.blog .article > a .description {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+
+    width: 100%;
+    margin-top: -2.55em;
+
+    text-align: center;
+
+}
+
+.blog .article > a .description .type {
+    text-transform: uppercase;
+    font-size: 1.1em;
+}
+
+.blog .article > a .description .blog-header {
+    font-size: 3em;
+    padding: 1em;
+    font-family: Roboto Bold, Times New Romon, Arial;
+}
+
+.main-footer {
+    display: block;
+    height: 10em;
+    background: #2590f5;
+    width: 100%;
+}
