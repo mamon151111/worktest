@@ -7,13 +7,20 @@
   },
   "dependencies": {
     "compression": "^1.0.3",
+    "connect-ensure-login": "^0.1.1",
     "cors": "^2.5.2",
+    "express-session": "^1.12.1",
     "gulp-install": "^0.6.0",
     "loopback": "^2.22.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^2.1.0",
     "loopback-connector-mongodb": "^1.13.0",
     "loopback-datasource-juggler": "^2.39.0",
+    "loopback-passport": "^1.0.2",
+    "passport-facebook": "^2.0.0",
+    "passport-google-oauth": "^0.2.0",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.3",
     "serve-favicon": "^2.0.1"
   },
   "devDependencies": {

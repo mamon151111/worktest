@@ -13,13 +13,17 @@ AuctionApp.controller('AuthController', ['$scope', '$routeParams', '$http',
         $scope.user = $auth.user;
        //$scope.title=$route.current.locals.title;
         if ($scope.user.id && $location.url().match('/register')) {
-
             $location.url('/my_profile');
             return;
-        } else if (!$scope.user.id && $location.url().match('/my_profile')){
+        } else if (!$scope.user.id && $location.url().match('/my_profile')) {
             $location.url('/login');
             return;
         }
+       /* else if ($scope.user.id && $location.url().match('/login')) {
+            console.log($scope.user);
+            $location.url('/');
+            return;
+        }*/
 
         $scope.saveUser = function (form, user) {
             if (form.$valid) {
@@ -89,7 +93,6 @@ AuctionApp.controller('AuthController', ['$scope', '$routeParams', '$http',
             }
         });
     }
-
     return {
         link: link
     };
