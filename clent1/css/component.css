@@ -82,7 +82,7 @@ a.offers:hover {
 }
 
 .main-header.index .index-title {
-    margin-top: 60px;
+    margin-top: 134px;
     text-align: center;
     font-size: 4.5em;
     color: #FFF;
@@ -97,7 +97,7 @@ a.offers:hover {
 
     width: 116px;
     height: 35px;
-    padding-top: 7px;
+    padding-top: 11px;
 
     background: #FFF;
 
@@ -131,11 +131,7 @@ a.offers:hover {
 }
 
 .main-menu > .menu {
-    position: relative;
-    top: -25px;
     float: left;
-    text-align: left;
-
 
 }
 .menu .container > li {
@@ -540,9 +536,6 @@ a.offers:hover {
 .slider .container {
     position: relative;
     overflow-y: hidden;
-
-    padding-right: 0;
-    padding-left: 0;
 }
 .slider > .container > .item.hor-container {
     width: 100%;
@@ -555,15 +548,6 @@ a.offers:hover {
     width: 100%;
     height: 100%;
     border: none;
-}
-
-.slider .col-md-6,
-.slider .row,
-.slider .col-md-12{
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
-    padding-bottom: 0;
 }
 
 
@@ -657,15 +641,6 @@ a.offers:hover {
 
     width: 33.3333333%;
     border: 0;
-}
-.blog.container-fluid {
-    padding-right: 0;
-    padding-left: 0;
-}
-
-.blog .article.col-md-4 {
-    padding-left: 0;
-    padding-right: 0;
 }
 .blog .article.last {
     clear: right;
