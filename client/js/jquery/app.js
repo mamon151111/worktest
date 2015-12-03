@@ -1,29 +1,32 @@
 (function ($) {
     "use strict";
+    $.fn.yDatepicker = function () {};
     $(document).ready(function () {
-        $('.menu .main-menu-item.collapsed a').bind('click', function (event) {
+        $('.menu .main-menu-item.root > a').bind('click', function (event) {
             var $this = $(this),
                 div,
+                token = true,
                 docHandler;
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            div = $(this).parents('.collapsed');
 
-            div.removeClass('collapsed').addClass('expanded');
-            alert('ccc');
+            event.preventDefault();
+
+            div = $(this).parents('.root');
 
             docHandler = function (event) {
-                alert(event.target);
-                if ($(event.target).closest('.expanded') !== div
-                        || $(event.target) === $this
-                        || $(event.target).closest('a') === $this
-                        ) {
-                    div.removeClass('expanded').addClass('collapsed');
-                    $(document).unbind('click', docHandler);
+                if (token) {
+                    token = false;
+                    return;
                 }
+                div.removeClass('expanded').addClass('collapsed');
+                $(document).unbind('click', docHandler);
             };
 
-            $(document).bind('click', docHandler);
+            if (div.hasClass('collapsed')) {
+                div.removeClass('collapsed').addClass('expanded');
+                $(document).bind('click', docHandler);
+            }
         });
+
     });
+    $('.datepicker').yDatepicker();
 }(jQuery));
