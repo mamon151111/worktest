@@ -22,7 +22,8 @@
         "callbackPath": "/auth/facebook/callback",
         "successRedirect": "/auth/account",
         "failureRedirect": "/login",
-        "scope": ["email"],
+        "scope": ["email","public_profile","user_friends"],
+        "profileFields": ["id", "displayName","email"],
         "failureFlash": true
     },
     "google-login": {

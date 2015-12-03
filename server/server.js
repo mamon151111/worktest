@@ -1,5 +1,5 @@
 var loopback = require('loopback');
-
+var path = require('path');
 var boot = require('loopback-boot');
 
 var app = module.exports = loopback();
@@ -8,7 +8,10 @@ var PassportConfigurator = loopbackPassport.PassportConfigurator;
 var passportConfigurator = new PassportConfigurator(app);
 //var bodyParser = require('body-parser');
 var passportConfigurator = new PassportConfigurator(app);
-app.start = function() {
+
+app.use(loopback.static(path.resolve(__dirname, '../client')));
+
+app.start = function () {
     // start the web server
     return app.listen(function() {
         app.emit('started');
@@ -30,7 +33,6 @@ boot(app, __dirname, function(err) {
     if (require.main === module)
         app.start();
 });
-
 
 
 app.use(loopback.session({
@@ -61,11 +63,3 @@ for(var s in config) {
     c.session = c.session !== false;
     passportConfigurator.configureProvider(s, c);
 }
-
-app.get('/auth/facebook', passport.authenticate('facebook', {
-    scope: ['email']
-}));
-app.get('/auth/facebook/callback', passport.authenticate('facebook', {
-    successRedirect: '/',
-    failureRedirect: '#/login2'
-}));

@@ -93,6 +93,7 @@ login
     color:#000000;
 }
 .login-logo{
+    opacity:0.5;
     position: relative;
     display: inline-block;
     top:0;
