@@ -1,3 +1,6 @@
+[![Stories in Ready](https://badge.waffle.io/mamon151111/worktest.png?label=ready&title=Ready)](https://waffle.io/mamon151111/worktest)
+[![Stories in Ready](https://badge.waffle.io/mamon151111/worktest.png?label=ready&title=Ready)](https://waffle.io/mamon151111/worktest)
+[![Stories in Ready](https://badge.waffle.io/mamon151111/worktest.png?label=ready&title=Ready)](https://waffle.io/mamon151111/worktest)
 # worktest
 
 [![Stories in Ready](https://badge.waffle.io/mamon151111/worktest.png?label=ready&title=Ready)](http://waffle.io/mamon151111/worktest)
